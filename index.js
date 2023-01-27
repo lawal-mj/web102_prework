@@ -31,14 +31,15 @@ function addGamesToPage(games) {
     let my_games = JSON.parse(games)
 
     // loop over each item in the data
-    for(let i =0; i< my_games.length ; i++){
+    for(let i =0; i < my_games.length ; i++){
         // const game = games[i]
         const content = document.createElement('div');
         content.classList.add('game-card')
         content.innerHTML = `
-            <h1>${my_games[i].name}</h1>
-            <img class ="game-img" src="${my_games[i].img}">
+        <img class ="game-img" src="${my_games[i].img}">
+        <h3>${my_games[i].name}</h3>
             <p>${my_games[i].description}</p>
+            <p>Backers: ${my_games[i].backers}</p>
             `
         const container = document.getElementById("games-container");
         container.appendChild(content) 
