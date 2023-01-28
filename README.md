@@ -23,7 +23,8 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://imgur.com/a/ANKmbI4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<!-- <img src='https://imgur.com/a/ANKmbI4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
+GIF TOO LARGE: USE LINK: https://imgur.com/a/ANKmbI4
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  GIFCAP
