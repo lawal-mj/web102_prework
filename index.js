@@ -10,6 +10,7 @@ import GAMES_DATA from './games.js';
 
 // create a list of objects to store the data about the games using JSON.parse
 const GAMES_JSON = JSON.parse(GAMES_DATA)
+// console.log(GAMES_JSON)
 
 // remove all child elements from a parent element in the DOM
 function deleteChildElements(parent) {
@@ -44,7 +45,6 @@ function addGamesToPage(games) {
         const container = document.getElementById("games-container");
         container.appendChild(content) 
             
-        console.log(container)
 
     }
 
@@ -81,20 +81,30 @@ addGamesToPage(GAMES_DATA)
 const contributionsCard = document.getElementById("num-contributions");
 
 // use reduce() to count the number of total contributions by summing the backers
-
+const total_contributions = GAMES_JSON.reduce((sum, item) => {
+    return sum + item.backers
+}, 0)
 
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
+contributionsCard.innerHTML = `<p>${total_contributions.toLocaleString()}</p>`
 
 
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
+const amount_raised = GAMES_JSON.reduce((sum, item) => {
+    return sum + item.pledged
+}, 0)
+
 
 // set inner HTML using template literal
+raisedCard.innerHTML = `<p>${amount_raised.toLocaleString()}</p>`
 
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
+let no_of_games = GAMES_JSON.length;
 
+gamesCard.innerHTML = `<p>${no_of_games.toLocaleString()}</p>`
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
